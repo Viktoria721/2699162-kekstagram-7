@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Функция для проверки длины строки
 function checkStringLength(string, maxLength) {
   return string.length <= maxLength;
@@ -25,3 +26,4 @@ function getNumberFromString(string) {
 
   return numbers === '' ? NaN : Number(numbers);
 }
+
