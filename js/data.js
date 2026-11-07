@@ -24,14 +24,14 @@ const MESSAGES = [
 
 let commentId = 1;
 
-const createComment = () => {
+const createComment = () => ({
   return {
     id: commentId++,
     avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
     message: getRandomArrayElement(MESSAGES),
     name: getRandomArrayElement(NAMES),
   };
-};
+});
 
 const createComments = () => {
   const commentsCount = getRandomInteger(0, 30);
@@ -39,7 +39,7 @@ const createComments = () => {
   return Array.from({ length: commentsCount }, createComment);
 };
 
-const createPhoto = (index) => {
+const createPhoto = (index) => ({
   return {
     id: index,
     url: `photos/${index}.jpg`,
@@ -47,6 +47,6 @@ const createPhoto = (index) => {
     likes: getRandomInteger(15, 200),
     comments: createComments(),
   };
-};
+});
 
 export const photos = Array.from({ length: 25 }, (_, index) => createPhoto(index + 1));
